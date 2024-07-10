@@ -16,8 +16,11 @@ const API_KEY = process.env.WEATHER_API_KEY;
 
 let city = "Delhi";
 
+
 const getCoordinates = async()=>{
 
+   if(city != '')
+   {
     try {
         
         const result = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`)
@@ -30,6 +33,10 @@ const getCoordinates = async()=>{
         
         console.log(error);
     }
+   }
+   else{
+     console.log("Please eneter your city name");
+   }
 
 }
 
@@ -92,5 +99,5 @@ app.get('/data/', async(req,res)=> {
 })
 
 app.listen(PORT, ()=>{
-    console.log(`Server listening on port ${PORT} `);
+    console.log(`Server listening on http://localhost:${PORT} `);
 }) 

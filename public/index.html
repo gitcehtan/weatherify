@@ -5,63 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/favicon/favicon-16x16.png">
 </head>
 <body>
-    
+    <img src="./img/weather-background.jpg" style="width: 100vw; height: 100vh; position: fixed; z-index: -1; opacity: 0.8;">
     <nav>
-        SearchBar
+        <h1><b>WEATHERIFY</b></h1>
     </nav>
     
     <div class="search-bar">
         <form action="/" method="post" id="form-search">
             <label for="city"></label>
-            <input type="text" name="city" id="search-city" >
+            <input type="text" name="city" id="search-city" autofocus >
             <button id="btn-search" type="submit">Search</button>
         </form> 
 
-        <!-- <form action="/submit" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"
-              placeholder="Enter Your Name" required>
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"
-              placeholder="Enter Your Email" required>
-            <br>
-            <button type="submit">Submit</button>
-          </form> -->
     </div>
+    
     
     <div class="data-loading">
         <div class="loader"></div>
-        <div>Loading ...</div>
+        <div style="color: whitesmoke; font-size: 30px;">Loading ...</div>
     </div>
- 
 
 
     <main id="weather-data" style="display: none;">
-        <div id="temp">
-            Temperature :
+        <div id="main-data">
+            <div class="data-container" id="city_name">
+                City:
+            </div>
+            <div class="data-container" id="temp">
+                Temperature :
+            </div>
+            <div class="data-container" id="feels_like">
+                Feels Like :
+            </div>
+            <div id="min-max-temp">
+                <div class="data-container" id="mintemp">
+                    Min  Temp
+                </div>
+                <div class="data-container" id="maxtemp">
+                    MaX Temp
+                </div>
+            </div>
         </div>
-        <div id="feels_like">
-            Feels Like :
-        </div>
-        <div id="minmaxtemp">
-            Min MaX Temp
-        </div>
-        <div id="pressure">
-            pressure
-        </div>
-        <div id="humidity">
-            humidity
-        </div>
-        <div id="sea_level">
-            sea_level
-        </div>
+       <div id="other-data">
+            <div class="data-container" id="pressure">
+                pressure
+            </div>
+            <div class="data-container" id="humidity">
+                humidity
+            </div>
+            <div class="data-container" id="sea_level">
+                sea_level
+            </div>
 
-        <div id="grnd_level">
-            grnd_level
-        </div>
+            <div class="data-container" id="grnd_level">
+                grnd_level
+            </div>
+       </div>
 
     </main>
 
